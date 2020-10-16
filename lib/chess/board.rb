@@ -1,11 +1,15 @@
 # frozen_string_literal: true
 
-# Chess class
-class Chess
-  # Board class nested in Chess
-  class Board
-    def initialize
-      @height, @width = 8
-    end
+# Board class
+class Board
+  def intialize
+    @height = 8
+    @width = 8
+  end
+
+  def within?(x, y)
+    return true if x >= 1 && x <= 8 && y >= 1 && y <= 8
+
+    false
   end
 end
