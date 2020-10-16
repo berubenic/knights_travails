@@ -4,4 +4,5 @@
 class Chess
   # Knight class nested in Chess
   class Knight
+  end
 end
