@@ -8,8 +8,13 @@ class Knight
     @y = 1
   end
 
-  def knight_moves(start, _finish)
-    possible_moves(start)
+  def knight_moves(start, finish, count = 0)
+    possible_moves(start).each_value do |value|
+      if value == finish
+        count += 1
+        return value
+      end
+    end
   end
 
   def possible_moves(start)
