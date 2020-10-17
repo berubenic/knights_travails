@@ -8,20 +8,30 @@ class Knight
     @y = 1
   end
 
-  def possible_moves(start, last, count = 0)
-    result = []
-
+  def possible_moves(start, count = 0)
     x = start[0]
     y = start[-1]
-    possibilities = [[x + 1, y - 2], [x + 1, y + 2], [x + 2, y - 1], [x + 2, y + 1], [x - 1, y - 2], [x - 1, y + 2], [x - 2, y - 1], [x - 2, y + 1]]
+    possibilities = assign_possibilities(x, y)
+    possibilities.delete_if { |_key, value| true unless within?(value) }
+    return count if is_equal_to_start?(start, possibilities)
 
-    queue = []
-    queue << start
-
-    possibilities.each { |arr| queue << arr if within?(arr) } until result == last
-
-    next_move.each { |_arr| possible_moves(start, last, count + 1, next_move) }
+    print possibilities
   end
+
+  def assign_possibilities(x, y)
+    {
+      first: [x + 1, y - 2],
+      second: [x - 1, y - 2],
+      third: [x + 1, y + 2],
+      fourth: [x - 1, y + 2],
+      fifth: [x + 2, y - 1],
+      sixth: [x - 2, y - 1],
+      seventh: [x + 2, y + 1],
+      eight: [x - 2, y + 1]
+    }
+  end
+
+  def is_equal_to_start?(start, possibilities); end
 
   def within?(arr)
     x = arr[0]
