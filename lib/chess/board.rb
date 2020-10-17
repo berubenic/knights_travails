@@ -20,7 +20,7 @@ class Board
     4.times do
       first_row.each_with_index do |c, i|
         if i.odd?
-          print c.bg_green
+          print c.bg_white
         elsif i.even?
           print c.bg_black
         end
@@ -30,7 +30,7 @@ class Board
         if i.odd?
           print c.bg_black
         elsif i.even?
-          print c.bg_green
+          print c.bg_white
         end
       end
       print "\n"
