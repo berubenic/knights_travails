@@ -17,6 +17,7 @@ class Board
     cell = '  '
     first_row = Array.new(8, cell)
     second_row = Array.new(8, cell)
+    header = []
     4.times do
       first_row.each_with_index do |c, i|
         if i.odd?
