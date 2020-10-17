@@ -5,4 +5,4 @@ require_relative 'chess/knight'
 
 piece = Knight.new
 
-piece.possible_moves([1, 1])
+p piece.knight_moves([1, 1], [2, 3])

@@ -8,14 +8,16 @@ class Knight
     @y = 1
   end
 
-  def possible_moves(start, count = 0)
+  def knight_moves(start, _finish)
+    possible_moves(start)
+  end
+
+  def possible_moves(start)
     x = start[0]
     y = start[-1]
     possibilities = assign_possibilities(x, y)
     possibilities.delete_if { |_key, value| true unless within?(value) }
-    return count if is_equal_to_start?(start, possibilities)
-
-    print possibilities
+    possibilities
   end
 
   def assign_possibilities(x, y)
@@ -30,8 +32,6 @@ class Knight
       eight: [x - 2, y + 1]
     }
   end
-
-  def is_equal_to_start?(start, possibilities); end
 
   def within?(arr)
     x = arr[0]
