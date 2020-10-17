@@ -2,6 +2,10 @@
 
 # Can colorize strings
 class String
+  def white
+    "\e[97m#{self}\e[0m"
+  end
+
   def black
     "\e[30m#{self}\e[0m"
   end
@@ -32,6 +36,10 @@ class String
 
   def gray
     "\e[37m#{self}\e[0m"
+  end
+
+  def bg_white
+    "\e[107m#{self}\e[0m"
   end
 
   def bg_black
