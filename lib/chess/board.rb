@@ -12,4 +12,28 @@ class Board
 
     false
   end
+
+  def setup_board
+    cell = '  '
+    first_row = Array.new(8, cell)
+    second_row = Array.new(8, cell)
+    4.times do
+      first_row.each_with_index do |c, i|
+        if i.odd?
+          print c.bg_green
+        elsif i.even?
+          print c.bg_black
+        end
+      end
+      print "\n"
+      second_row.each_with_index do |c, i|
+        if i.odd?
+          print c.bg_black
+        elsif i.even?
+          print c.bg_green
+        end
+      end
+      print "\n"
+    end
+  end
 end

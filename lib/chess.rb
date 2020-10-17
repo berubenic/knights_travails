@@ -2,7 +2,7 @@
 
 require_relative 'chess/board'
 require_relative 'chess/knight'
+require_relative 'string'
 
-piece = Knight.new
-
-p piece.knight_moves([1, 1], [2, 3])
+board = Board.new
+board.setup_board

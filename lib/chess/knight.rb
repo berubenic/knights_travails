@@ -8,13 +8,24 @@ class Knight
     @y = 1
   end
 
-  def knight_moves(start, finish, count = 0)
+  def knight_moves(start, finish, count = 0, moves = [])
     possible_moves(start).each_value do |value|
       if value == finish
         count += 1
-        return value
+        moves << value
       end
     end
+    print_result(count, moves)
+  end
+
+  def print_result(count, moves)
+    if count <= 1
+      puts "You made it in #{count} move! Here's your path: \n"
+    else
+      puts "You made it in #{count} moves! Here's your path: \n"
+    end
+
+    moves.each { |move| print "#{move}\n" }
   end
 
   def possible_moves(start)
