@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require 'pry'
 # Board class
 class Board
   attr_reader :rows, :columns
@@ -17,6 +16,11 @@ class Board
       2 => [],
       1 => []
     }
+  end
+
+  def setup_blank_board
+    create_tiles
+    prepare_row_for_color
   end
 
   def create_tiles

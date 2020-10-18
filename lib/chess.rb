@@ -7,6 +7,5 @@ require_relative 'string'
 
 # setup blank board
 board = Board.new
-board.create_tiles
-board.prepare_row_for_color
+board.setup_blank_board
 board.print_board
