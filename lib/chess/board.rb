@@ -63,13 +63,3 @@ class Board
     print "\n"
   end
 end
-
-# color tiles
-# Loop through each key of @rows
-#   if key is odd?
-#     loop through elements of value
-#       if index of element if odd?
-#         element.color_tile(black)
-#       else
-#         element.color_tile(white)
-#
