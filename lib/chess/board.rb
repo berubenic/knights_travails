@@ -55,7 +55,7 @@ class Board
   def print_board
     rows.each do |y, x|
       print "#{y} "
-      x.each { |tile| print tile.content }
+      x.each { |tile| print tile.to_s }
       print "\n"
     end
     print ' '
