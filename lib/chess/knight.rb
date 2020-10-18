@@ -3,10 +3,15 @@
 require 'pry'
 # Knight class
 class Knight
-  def initialize
-    @x = 1
-    @y = 1
+  attr_reader :piece
+
+  def initialize(x, y)
+    @piece = "\u{265E}"
+    @x = x
+    @y = y
   end
+
+  def place_piece_on_board(x, y); end
 
   def knight_moves(start, finish, count = 0, moves = [])
     possible_moves(start).each_value do |value|

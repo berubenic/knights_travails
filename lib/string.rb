@@ -3,7 +3,7 @@
 # Can colorize strings
 class String
   def white
-    "\e[97m#{self}\e[0m"
+    "\e[37m#{self}\e[0m"
   end
 
   def black
@@ -39,11 +39,11 @@ class String
   end
 
   def bg_white
-    "\e[107m#{self}\e[0m"
+    "\e[48;5;130m#{self}\e[0m"
   end
 
   def bg_black
-    "\e[40m#{self}\e[0m"
+    "\e[48;5;52m#{self}\e[0m"
   end
 
   def bg_red

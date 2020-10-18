@@ -56,6 +56,24 @@ class Board
     end
   end
 
+  def place_piece_on_board(piece, x, y)
+    piece = create_piece(piece, x, y)
+    tile = find_tile(x, y)
+    tile.content = " #{piece} "
+  end
+
+  def find_tile(fx, fy)
+    rows.each do |y, x|
+      if fy == y
+        x.each { |tile| return tile if tile.x == fx }
+      end
+    end
+  end
+
+  def create_piece(piece, x, y)
+    return Knight.new(x, y).piece if piece.downcase == 'knight'
+  end
+
   def print_board
     rows.each do |y, x|
       print "#{y} "

@@ -9,3 +9,8 @@ require_relative 'string'
 board = Board.new
 board.setup_blank_board
 board.print_board
+
+# place knight on board
+
+board.place_piece_on_board('knight', 'A', 1)
+board.print_board
