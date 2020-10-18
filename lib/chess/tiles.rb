@@ -13,6 +13,7 @@ class Tiles
 
   def color_tile(white)
     @content = '   '.bg_white if white
+    @content = '   '.bg_black unless white
   end
 
   # def inspect

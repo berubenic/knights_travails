@@ -7,5 +7,5 @@ require_relative 'string'
 
 board = Board.new
 board.create_tiles
-board.color_tiles
+board.prepare_row_for_color
 board.print_board

@@ -25,17 +25,51 @@ class Board
     end
   end
 
-  def color_tiles
-    rows.each do |_y, x|
-      x.each { |tile| tile.color_tile(true) }
+  def prepare_row_for_color
+    rows.each do |y, x|
+      send_odd_row_for_color(x) if y.odd?
+      send_even_row_for_color(x) unless y.odd?
+    end
+  end
+
+  def send_odd_row_for_color(row)
+    row.each_with_index do |tile, index|
+      if index.odd?
+        tile.color_tile(true)
+      else
+        tile.color_tile(false)
+      end
+    end
+  end
+
+  def send_even_row_for_color(row)
+    row.each_with_index do |tile, index|
+      if index.odd?
+        tile.color_tile(false)
+      else
+        tile.color_tile(true)
+      end
     end
   end
 
   def print_board
     rows.each do |y, x|
-      print y
+      print "#{y} "
       x.each { |tile| print tile.content }
       print "\n"
     end
+    print ' '
+    columns.each { |letter| print "  #{letter}" }
+    print "\n"
   end
 end
+
+# color tiles
+# Loop through each key of @rows
+#   if key is odd?
+#     loop through elements of value
+#       if index of element if odd?
+#         element.color_tile(black)
+#       else
+#         element.color_tile(white)
+#
