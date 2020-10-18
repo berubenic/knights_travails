@@ -1,39 +1,40 @@
 # frozen_string_literal: true
 
+require 'pry'
 # Board class
 class Board
-  def intialize
-    @height = 8
-    @width = 8
+  attr_reader :rows, :columns
+
+  def initialize
+    @columns = %w[A B C D E F G H]
+    @rows = {
+      8 => [],
+      7 => [],
+      6 => [],
+      5 => [],
+      4 => [],
+      3 => [],
+      2 => [],
+      1 => []
+    }
   end
 
-  def within?(x, y)
-    return true if x >= 1 && x <= 8 && y >= 1 && y <= 8
-
-    false
+  def create_tiles
+    rows.each do |y, arr|
+      columns.each { |x| arr << Tiles.new(x, y) }
+    end
   end
 
-  def setup_board
-    cell = '  '
-    first_row = Array.new(8, cell)
-    second_row = Array.new(8, cell)
-    header = []
-    4.times do
-      first_row.each_with_index do |c, i|
-        if i.odd?
-          print c.bg_white
-        elsif i.even?
-          print c.bg_black
-        end
-      end
-      print "\n"
-      second_row.each_with_index do |c, i|
-        if i.odd?
-          print c.bg_black
-        elsif i.even?
-          print c.bg_white
-        end
-      end
+  def color_tiles
+    rows.each do |_y, x|
+      x.each { |tile| tile.color_tile(true) }
+    end
+  end
+
+  def print_board
+    rows.each do |y, x|
+      print y
+      x.each { |tile| print tile.content }
       print "\n"
     end
   end
