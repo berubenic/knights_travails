@@ -12,16 +12,16 @@ class Tiles
     @color = nil
   end
 
-  def color_tile(white)
-    @color = 'white' if white
-    @color = 'black' unless white
+  def color_tile(primary)
+    @color = 'primary' if primary
+    @color = 'secondary' unless primary
   end
 
   def to_s(content = @content)
-    if @color == 'white'
-      content.bg_white
-    elsif @color == 'black'
-      content.bg_black
+    if @color == 'primary'
+      content.bg_primary
+    elsif @color == 'secondary'
+      content.bg_secondary
     end
   end
 end

@@ -58,7 +58,7 @@ class Board
 
   def place_piece_on_board(piece, x, y)
     tile = find_tile(x, y)
-    tile.content = " #{piece} "
+    tile.content = " #{piece.symbol} "
   end
 
   def find_tile(fx, fy)

@@ -8,7 +8,7 @@ class Pieces
   end
 
   def create_piece(x, y, name, id)
-    pieces << Knight.new(x, y, name, id).piece if name.downcase == 'knight'
+    pieces << Knight.new(x, y, name, id) if name.downcase == 'knight'
   end
 
   def find_piece(name, id)

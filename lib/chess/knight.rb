@@ -2,10 +2,10 @@
 
 # Knight class
 class Knight
-  attr_reader :piece
+  attr_reader :symbol
 
   def initialize(x, y, name, id)
-    @piece = "\u{265E}"
+    @symbol = "\u{265E}"
     @name = name
     @id = id
     @x = x
