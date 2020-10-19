@@ -11,8 +11,6 @@ class Knight
     @y = y
   end
 
-  def place_piece_on_board(x, y); end
-
   def knight_moves(start, finish, count = 0, moves = [])
     possible_moves(start).each_value do |value|
       if value == finish

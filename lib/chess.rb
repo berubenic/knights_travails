@@ -8,7 +8,6 @@ require_relative 'string'
 # setup blank board
 board = Board.new
 board.setup_blank_board
-board.print_board
 
 # place knight on board
 
