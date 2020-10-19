@@ -3,6 +3,7 @@
 # Knight class
 class Knight
   attr_reader :symbol, :name, :id
+  attr_accessor :x, :y
 
   def initialize(x, y, name, id)
     @symbol = "\u{265E}"

@@ -16,4 +16,10 @@ class Pieces
       return piece if piece.name == name && piece.id == id
     end
   end
+
+  def update_new_coordinates(name, id, x, y)
+    piece = find_piece(name, id)
+    piece.x = x
+    piece.y = y
+  end
 end

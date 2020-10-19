@@ -64,9 +64,11 @@ class Board
     tile.content = " #{piece.symbol} "
   end
 
-  def move_piece(name, id, _x, _y)
+  def move_piece(name, id, new_x, new_y)
     piece = pieces.find_piece(name, id)
-    remove_piece(piece.x, piece.y)
+    remove_piece_from_tile(piece.x, piece.y)
+    pieces.update_new_coordinates(name, id, new_x, new_y)
+    place_piece_on_board(name, id, new_x, new_y)
   end
 
   def remove_piece_from_tile(x, y)
@@ -74,10 +76,10 @@ class Board
     tile.content = '   '
   end
 
-  def find_tile(fx, fy)
+  def find_tile(this_x, this_y)
     rows.each do |y, x|
-      if fy == y
-        x.each { |tile| return tile if tile.x == fx }
+      if this_y == y
+        x.each { |tile| return tile if tile.x == this_x }
       end
     end
   end
