@@ -17,10 +17,10 @@ class Tiles
     @color = 'secondary' unless primary
   end
 
-  def to_s(content = @content)
-    if @color == 'primary'
+  def to_s
+    if color == 'primary'
       content.bg_primary
-    elsif @color == 'secondary'
+    elsif color == 'secondary'
       content.bg_secondary
     end
   end
