@@ -14,3 +14,6 @@ board.setup_board
 
 board.place_piece_on_board('knight', 1, 'A', 1)
 board.print_board
+
+board.remove_piece_from_tile('A', 1)
+board.print_board

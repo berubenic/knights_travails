@@ -64,7 +64,15 @@ class Board
     tile.content = " #{piece.symbol} "
   end
 
-  def move_piece(name, id, x, y); end
+  def move_piece(name, id, _x, _y)
+    piece = pieces.find_piece(name, id)
+    remove_piece(piece.x, piece.y)
+  end
+
+  def remove_piece_from_tile(x, y)
+    tile = find_tile(x, y)
+    tile.content = '   '
+  end
 
   def find_tile(fx, fy)
     rows.each do |y, x|
