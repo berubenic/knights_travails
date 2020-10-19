@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require 'pry'
 # Each tiles on the board is an object
 class Tiles
   attr_reader :x, :y, :color
