@@ -2,7 +2,7 @@
 
 # Board class
 class Board
-  attr_reader :rows, :columns
+  attr_reader :rows, :columns, :pieces
 
   def initialize
     @columns = %w[A B C D E F G H]
@@ -16,11 +16,13 @@ class Board
       2 => [],
       1 => []
     }
+    @pieces = Pieces.new
   end
 
-  def setup_blank_board
+  def setup_board
     create_tiles
     prepare_row_for_color
+    pieces.create_piece('A', 1, 'knight', 1)
   end
 
   def create_tiles
@@ -56,10 +58,13 @@ class Board
     end
   end
 
-  def place_piece_on_board(piece, x, y)
+  def place_piece_on_board(name, id, x, y)
+    piece = pieces.find_piece(name, id)
     tile = find_tile(x, y)
     tile.content = " #{piece.symbol} "
   end
+
+  def move_piece(name, id, x, y); end
 
   def find_tile(fx, fy)
     rows.each do |y, x|
