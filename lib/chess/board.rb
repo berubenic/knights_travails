@@ -57,7 +57,6 @@ class Board
   end
 
   def place_piece_on_board(piece, x, y)
-    piece = create_piece(piece, x, y)
     tile = find_tile(x, y)
     tile.content = " #{piece} "
   end
@@ -68,10 +67,6 @@ class Board
         x.each { |tile| return tile if tile.x == fx }
       end
     end
-  end
-
-  def create_piece(piece, x, y)
-    return Knight.new(x, y).piece if piece.downcase == 'knight'
   end
 
   def print_board

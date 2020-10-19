@@ -1,12 +1,13 @@
 # frozen_string_literal: true
 
-require 'pry'
 # Knight class
 class Knight
   attr_reader :piece
 
-  def initialize(x, y)
+  def initialize(x, y, name, id)
     @piece = "\u{265E}"
+    @name = name
+    @id = id
     @x = x
     @y = y
   end
