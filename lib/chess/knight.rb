@@ -16,7 +16,7 @@ class Knight
   def move_valid?(new_x, new_y)
     move = [new_x, new_y]
     possibilities = assign_possibilities
-    print possibilities
+    possibilities.has_value?(move)
   end
 
   def assign_possibilities
