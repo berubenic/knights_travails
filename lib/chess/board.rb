@@ -66,7 +66,8 @@ class Board
 
   def move_piece(name, id, new_x, new_y)
     piece = pieces.find_piece(name, id)
-    piece.move_valid?(new_x, new_y)
+    return error_message unless piece.move_valid?(new_x, new_y)
+
     remove_piece_from_tile(piece.x, piece.y)
     pieces.update_new_coordinates(name, id, new_x, new_y)
     place_piece_on_board(name, id, new_x, new_y)
@@ -94,5 +95,9 @@ class Board
     print ' '
     columns.each { |letter| print "  #{letter}" }
     print "\n"
+  end
+
+  def error_message
+    puts 'ERROR'
   end
 end

@@ -15,5 +15,5 @@ board.setup_board
 board.place_piece_on_board('knight', 1, 'A', 1)
 board.print_board
 
-board.move_piece('knight', 1, 'B', 3)
+board.move_piece('knight', 1, 'B', 1)
 board.print_board
