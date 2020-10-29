@@ -10,7 +10,7 @@ class Pathmaker
     @path = []
   end
 
-  def build_path
+  def build_possibilities
     return make_path if order[0].coordinate == end_coordinate
 
     current_move = order[0]
@@ -19,7 +19,7 @@ class Pathmaker
       order.push(Knight.new(move, current_move))
     end
     order.shift
-    build_path
+    build_possibilities
   end
 
   private

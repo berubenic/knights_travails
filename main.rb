@@ -3,7 +3,7 @@ require_relative 'lib/pathmaker'
 
 def knight_moves(start_coordinate, end_coordinate)
   path = Pathmaker.new(start_coordinate, end_coordinate)
-  path.build_path
+  path.build_possibilities
 end
 
 knight_moves([3, 3], [4, 3])
