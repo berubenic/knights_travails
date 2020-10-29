@@ -22,6 +22,8 @@ class Pathmaker
     build_path
   end
 
+  private
+
   def make_path
     current = order[0]
     path.prepend(current)

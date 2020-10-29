@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'pry'
-
 # class knight
 class Knight
   attr_reader :coordinate, :previous_move
@@ -32,13 +30,5 @@ class Knight
 
   def with_in_board?(coord)
     coord.all? { |num| num >= 0 && num <= 7 }
-  end
-
-  def inspect
-      if previous_move.nil?
-        "Coordinate: #{coordinate} - Previous Move: None"
-      else
-      "Coordinate: #{coordinate} - Previous Move: #{previous_move.coordinate}"
-      end
   end
 end
